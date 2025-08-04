@@ -7,7 +7,7 @@ interface IProps {
   disabledValue?: string;
   optionLabel?: string;
   optionValue?: string;
-  placeholder?: string;
+  placeholder?: any;
   value: any;
   onBlur?: any;
   onChange?: any;

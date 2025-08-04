@@ -9,7 +9,7 @@ interface IProps {
   value?: any;
   error?: string;
   onBlur?: any;
-  placeholder?: string;
+  placeholder?: any;
   instanceId?: any;
   disabled?: boolean;
 }
@@ -24,7 +24,7 @@ const BaseFormSelectSearch: FC<IProps> = ({
   onBlur,
   placeholder,
   instanceId,
-  disabled
+  disabled,
 }: IProps) => {
   const defaultValue = (options: any[], value: any) => {
     return options ? options.find((option) => option.value === value) : "";
