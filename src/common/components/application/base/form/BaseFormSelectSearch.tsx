@@ -9,7 +9,7 @@ interface IProps {
   value?: any;
   error?: string;
   onBlur?: any;
-  placeholder?: any;
+  placeholder?: string;
   instanceId?: any;
   disabled?: boolean;
 }

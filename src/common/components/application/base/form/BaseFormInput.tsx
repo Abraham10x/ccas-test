@@ -10,7 +10,7 @@ import {
 interface IProps {
   type?: string;
   label?: string;
-  placeholder?: any;
+  placeholder?: string;
   className?: any;
   name?: string;
   value?: any;

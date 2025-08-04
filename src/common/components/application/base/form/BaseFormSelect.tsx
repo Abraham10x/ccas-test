@@ -7,7 +7,7 @@ interface IProps {
   disabledValue?: string;
   optionLabel?: string;
   optionValue?: string;
-  placeholder?: any;
+  placeholder?: string;
   value: any;
   onBlur?: any;
   onChange?: any;
@@ -51,7 +51,7 @@ const BaseFormSelect: FC<IProps> = ({
       <select
         value={value}
         name={name}
-        placeholder={placeholder}
+        placeholder={placeholder || ""}
         onBlur={onBlur}
         disabled={disabled}
         onChange={onChange}
