@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "home",
+    "link": "procurement"
+  },
+  {
+    "title": "Profile",
+    "icon": "edit-profile",
+    "link": "procurement/profile"
+  },
+  {
+    "title": "Early Notification",
+    "icon": "notify",
+    "link": "procurement/earlytNotification"
+  },
+  {
+    "title": "Notification",
+    "icon": "document-text",
+    "link": "procurement/notification"
+  },
+  {
+    "title": "Kick Off",
+    "icon": "kickoff",
+    "link": "procurement/kickoff"
+  },
+  {
+    "title": "Monitoring Stage",
+    "icon": "open-eye",
+    "link": "procurement/monitoringStage"
+  },
+  {
+    "title": "Close Out Forms",
+    "icon": "records",
+    "link": "procurement/closeout"
+  },
+  {
+    "title": "Lessons Learnt",
+    "icon": "folder",
+    "link": "procurement/lessonsLearnt"
+  },
+  {
+    "title": "Training Resources",
+    "icon": "video-player",
+    "link": "procurement/trainingResources"
+  },
+  {
+    "title": "Contract Templates",
+    "icon": "charts",
+    "link": "procurement/contractTemplates"
+  }
+]

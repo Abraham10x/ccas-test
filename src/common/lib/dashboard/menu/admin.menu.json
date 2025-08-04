@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "home",
+    "link": "superadmin/"
+  },
+  {
+    "title": "Manage Roles",
+    "icon": "roles",
+    "link": "superadmin/manageRoles"
+  },
+  {
+    "title": "Manage Users",
+    "icon": "manage-user",
+    "link": "superadmin/users"
+  },
+  {
+    "title": "User Requests",
+    "icon": "add-users",
+    "link": "superadmin/userRequests"
+  },
+  {
+    "title": "Manage Contracts",
+    "icon": "document-text",
+    "link": "superadmin/manageContracts"
+  },
+  {
+    "title": "Manage Kickoff",
+    "icon": "kickoff",
+    "link": "superadmin/kickoff"
+  },
+  {
+    "title": "Report",
+    "icon": "report",
+    "link": "superadmin/report"
+  },
+  {
+    "title": "Activity Log",
+    "icon": "activity",
+    "link": "superadmin/activityLog"
+  },
+  {
+    "title": "Lessons Learnt",
+    "icon": "folder",
+    "link": "superadmin/lessonsLearnt"
+  },
+  {
+    "title": "Training Resources",
+    "icon": "video-player",
+    "link": "superadmin/trainingResources"
+  },
+  {
+    "title": "Contract Templates",
+    "icon": "charts",
+    "link": "superadmin/contractTemplates"
+  }
+]

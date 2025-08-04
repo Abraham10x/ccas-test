@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "home",
+    "link": "reviewer/"
+  },
+  {
+    "title": "Profile",
+    "icon": "edit-profile",
+    "link": "reviewer/profile"
+  },
+  {
+    "title": "Early Not. Requests",
+    "icon": "notify",
+    "link": "reviewer/requests"
+  },
+  {
+    "title": "Contracts Requests",
+    "icon": "document-text",
+    "link": "reviewer/contracts"
+  },
+  {
+    "title": "Kick Off",
+    "icon": "kickoff",
+    "link": "reviewer/kickoff"
+  },
+  {
+    "title": "Monitoring Requests",
+    "icon": "open-eye",
+    "link": "reviewer/monitoringStage"
+  },
+  {
+    "title": "Close-out Requests",
+    "icon": "records",
+    "link": "reviewer/closeout"
+  },
+  {
+    "title": "Lessons Learnt",
+    "icon": "folder",
+    "link": "reviewer/lessonsLearnt"
+  },
+  {
+    "title": "Training Resources",
+    "icon": "video-player",
+    "link": "reviewer/trainingResources"
+  },
+  {
+    "title": "Contract Templates",
+    "icon": "charts",
+    "link": "reviewer/contractTemplates"
+  }
+]

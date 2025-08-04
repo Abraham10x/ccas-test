@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "home",
+    "link": "system-authorizer/"
+  },
+  {
+    "title": "Profile",
+    "icon": "edit-profile",
+    "link": "system-authorizer/profile"
+  },
+  {
+    "title": "Early Not. Requests",
+    "icon": "notify",
+    "link": "system-authorizer/requests"
+  },
+  {
+    "title": "Contracts Requests",
+    "icon": "document-text",
+    "link": "system-authorizer/contracts"
+  },
+  {
+    "title": "Kickoff Requests",
+    "icon": "kickoff",
+    "link": "system-authorizer/kickoff"
+  },
+  {
+    "title": "User Requests",
+    "icon": "add-users",
+    "link": "system-authorizer/userRequests"
+  },
+  {
+    "title": "Monitoring Requests",
+    "icon": "open-eye",
+    "link": "system-authorizer/monitoringStage"
+  },
+  {
+    "title": "Close-out Requests",
+    "icon": "records",
+    "link": "system-authorizer/closeout"
+  },
+  {
+    "title": "Report",
+    "icon": "report",
+    "link": "system-authorizer/report"
+  },
+  {
+    "title": "Lessons Learnt",
+    "icon": "folder",
+    "link": "system-authorizer/lessonsLearnt"
+  },
+  {
+    "title": "Training Resources",
+    "icon": "video-player",
+    "link": "system-authorizer/trainingResources"
+  },
+  {
+    "title": "Contract Templates",
+    "icon": "charts",
+    "link": "system-authorizer/contractTemplates"
+  }
+]

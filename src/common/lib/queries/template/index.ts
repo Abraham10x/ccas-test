@@ -1,0 +1,44 @@
+export {};
+// import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+// import api from "../../api";
+// import { errorToast, handleErrors, successToast } from "../../helper";
+// import queryKey from "./keys";
+
+// const BASE_URL = "/template";
+
+// const create = (options = {}) => {
+//   const { mutate, isLoading, data, isSuccess } = useMutation(api.post, {
+//     mutationKey: [queryKey.create],
+//     ...options,
+//     onSuccess: () => {
+//       successToast("");
+//     },
+//     onError: (err: any) => {
+//       errorToast(handleErrors(err));
+//     },
+//   });
+//   return {
+//     mutate: (body: any) => mutate({ url: `${BASE_URL}`, body }),
+//     isLoading,
+//     data,
+//     isSuccess,
+//   };
+// };
+
+// const read = (options = {}) => {
+//   const response = useQuery(
+//     [queryKey.read],
+//     () => api.get({ url: `${BASE_URL}` }),
+//     {
+//       ...options,
+//       onSuccess: () => {},
+//       onError: () => {},
+//     }
+//   );
+
+//   return response;
+// };
+
+// const contractTemplatequeries = { create, read };
+
+// export default contractTemplatequeries;
