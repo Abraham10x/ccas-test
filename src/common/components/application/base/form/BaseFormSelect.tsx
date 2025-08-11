@@ -51,7 +51,6 @@ const BaseFormSelect: FC<IProps> = ({
       <select
         value={value}
         name={name}
-        placeholder={placeholder || ""}
         onBlur={onBlur}
         disabled={disabled}
         onChange={onChange}
