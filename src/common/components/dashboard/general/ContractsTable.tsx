@@ -242,13 +242,9 @@ const ContractsTable: FC = () => {
     { field: "duration", headerName: "DURATION", width: 150 },
   ];
 
-  const CustomToolbar: React.FunctionComponent<{
-    setFilterButtonEl: React.Dispatch<
-      React.SetStateAction<HTMLButtonElement | null>
-    >;
-  }> = ({ setFilterButtonEl }) => (
+  const CustomToolbar = () => (
     <GridToolbarContainer>
-      <GridToolbarFilterButton ref={setFilterButtonEl} />
+      <GridToolbarFilterButton />
       <GridToolbarExport />
     </GridToolbarContainer>
   );
