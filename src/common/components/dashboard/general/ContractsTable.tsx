@@ -244,8 +244,8 @@ const ContractsTable: FC = () => {
 
   const CustomToolbar = () => (
     <GridToolbarContainer>
-      <GridToolbarFilterButton />
-      <GridToolbarExport />
+      <GridToolbarFilterButton {...({} as any)} />
+      <GridToolbarExport {...({} as any)} />
     </GridToolbarContainer>
   );
 
@@ -258,9 +258,6 @@ const ContractsTable: FC = () => {
         }}
       >
         <DataGrid
-          components={{
-            Toolbar: CustomToolbar,
-          }}
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           rowsPerPageOptions={[5, 10, 20, 50, 100]}
