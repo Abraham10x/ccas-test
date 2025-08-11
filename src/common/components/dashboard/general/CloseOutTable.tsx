@@ -10,6 +10,7 @@ import {
   GridActionsCellItem,
   GridRowParams,
   GridSortModel,
+  GridColDef,
 } from "@mui/x-data-grid";
 import { useRouter } from "next/router";
 import { readableDate, retrieveToken, storeToken } from "@lib/helper";
@@ -125,7 +126,7 @@ const CloseOutTable = () => {
   const columns = [
     {
       field: "actions",
-      type: "actions",
+      type: "actions" as const,
       headerName: "Action",
       width: 100,
       getActions: (params: any) => {
