@@ -131,6 +131,7 @@ const CloseOutTable = () => {
       width: 100,
       getActions: (params: any) => {
         const actions = [
+          // @ts-ignore
           <GridActionsCellItem
             key="view"
             icon={<Visibility />}
@@ -148,6 +149,7 @@ const CloseOutTable = () => {
           params.row.contractor_evaluation === null
         ) {
           actions.push(
+            // @ts-ignore
             <GridActionsCellItem
               key="evaluate"
               icon={<Assessment />}
@@ -169,6 +171,7 @@ const CloseOutTable = () => {
         // Conditionally add view evaluation action
         if (params.row.contractor_evaluation === "Evaluated") {
           actions.push(
+            // @ts-ignore
             <GridActionsCellItem
               key="view-evaluation"
               icon={<Visibility />}
