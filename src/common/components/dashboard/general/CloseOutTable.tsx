@@ -52,6 +52,7 @@ const CloseOutTable = () => {
     apiResponse?.data?.data?.contractStatus === undefined
       ? []
       : apiResponse?.data?.data?.contractStatus;
+
   const handleView = async (id: any) => {
     storeToken("closeId", id);
     let url;
@@ -123,56 +124,64 @@ const CloseOutTable = () => {
 
   const columns = [
     {
-      field: "",
+      field: "actions",
       type: "actions",
       headerName: "Action",
       width: 100,
-      getActions: (params: any) => [
-        // <Link href={`/dashboard/superadmin/editRole/${params.id}`}>
-        // eslint-disable-next-line react/jsx-key
-        <GridActionsCellItem
-          icon={<Visibility />}
-          onClick={() => {
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            handleView(params.id);
-          }}
-          label="View details"
-          showInMenu
-        />,
-        userType === "Legal Adviser" &&
-        params.row.contractor_evaluation === null ? (
+      getActions: (params: any) => {
+        const actions = [
           <GridActionsCellItem
-            icon={<Assessment />}
-            onClick={() => {
-              storeToken("contractTitle", params.row.contract_title);
-              storeToken("startDate", params.row.start_date);
-              storeToken("endDate", params.row.end_date);
-              storeToken("contractID", params.row.contract_id);
-              // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              router.push(
-                `/dashboard/legal-adviser/evaluate-contractor/${params.row.contract_id}`
-              );
-            }}
-            label="Evaluate Contractor"
-            showInMenu
-          />
-        ) : (
-          <></>
-        ),
-        params.row.contractor_evaluation === "Evaluated" ? (
-          <GridActionsCellItem
+            key="view"
             icon={<Visibility />}
             onClick={() => {
-              // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              handleViewEvaluation(params.row.contract_id);
+              handleView(params.id);
             }}
-            label="View Evaluation"
+            label="View details"
             showInMenu
-          />
-        ) : (
-          <></>
-        ),
-      ],
+          />,
+        ];
+
+        // Conditionally add evaluation action
+        if (
+          userType === "Legal Adviser" &&
+          params.row.contractor_evaluation === null
+        ) {
+          actions.push(
+            <GridActionsCellItem
+              key="evaluate"
+              icon={<Assessment />}
+              onClick={() => {
+                storeToken("contractTitle", params.row.contract_title);
+                storeToken("startDate", params.row.start_date);
+                storeToken("endDate", params.row.end_date);
+                storeToken("contractID", params.row.contract_id);
+                router.push(
+                  `/dashboard/legal-adviser/evaluate-contractor/${params.row.contract_id}`
+                );
+              }}
+              label="Evaluate Contractor"
+              showInMenu
+            />
+          );
+        }
+
+        // Conditionally add view evaluation action
+        if (params.row.contractor_evaluation === "Evaluated") {
+          actions.push(
+            <GridActionsCellItem
+              key="view-evaluation"
+              icon={<Visibility />}
+              onClick={() => {
+                handleViewEvaluation(params.row.contract_id);
+              }}
+              label="View Evaluation"
+              showInMenu
+            />
+          );
+        }
+
+        return actions;
+      },
     },
     { field: "contractId", headerName: "CONTRACT ID", width: 150 },
     { field: "id", headerName: "ID", width: 100 },
@@ -192,7 +201,7 @@ const CloseOutTable = () => {
     },
     {
       field: "end_date",
-      headerName: "START DATE",
+      headerName: "END DATE",
       width: 200,
       renderCell: ({ row }: Partial<GridRowParams>) => (
         <p>{readableDate(row?.end_date)}</p>
@@ -204,6 +213,7 @@ const CloseOutTable = () => {
       width: 200,
     },
   ];
+
   const CustomToolbar: React.FunctionComponent<{
     setFilterButtonEl: React.Dispatch<
       React.SetStateAction<HTMLButtonElement | null>
