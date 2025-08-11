@@ -224,6 +224,7 @@ const CloseOutTable = () => {
     >;
   }> = ({ setFilterButtonEl }) => (
     <GridToolbarContainer>
+      {/* @ts-ignore */}
       <GridToolbarFilterButton ref={setFilterButtonEl} />
       <GridToolbarExport />
     </GridToolbarContainer>
