@@ -43,7 +43,6 @@ const ContractsTable: FC = () => {
   const handleEditForm = (contractId: any) => {
     storeToken("contractID", contractId);
     void router.push(`/dashboard/legal-adviser/edit-contract/${contractId}`);
-    // setContractID(contractId);
   };
 
   const userId = retrieveToken("userId");
@@ -142,73 +141,71 @@ const ContractsTable: FC = () => {
       headerName: "Action",
       width: 100,
       getActions: (params: any) => [
-        <GridActionsCellItem
-          onClick={() => {
+        {
+          icon: <VisibilityIcon />,
+          label: "View contract",
+          onClick: () => {
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             handleView(params.id);
-          }}
-          icon={<VisibilityIcon />}
-          label="View contract"
-          showInMenu={true}
-        />,
-        userType === "FMOJ system authorizer" &&
-        (params.row.status === "PENDING" ||
-          params.row.status === "Rejected") ? (
-          <GridActionsCellItem
-            onClick={() => {
-              handleModal(params.id, "Approved");
-            }}
-            icon={<CheckCircleIcon color="success" />}
-            style={{ color: "green" }}
-            label="Approve contract document"
-            showInMenu={true}
-          />
-        ) : (
-          <></>
-        ),
-        userType === "FMOJ system authorizer" &&
-        params.row.status === "PENDING" ? (
-          <GridActionsCellItem
-            onClick={() => {
-              handleModal(params.id, "Rejected");
-            }}
-            icon={<CancelIcon color="error" />}
-            style={{ color: "red" }}
-            label="Reject contract document"
-            showInMenu={true}
-          />
-        ) : (
-          <></>
-        ),
-        userType === "FMOJ system authorizer" ? (
-          <GridActionsCellItem
-            onClick={() => {
-              handleAssign(params.id, params.row.title);
-            }}
-            icon={<PersonAddIcon />}
-            label="Assign Reviewer"
-            showInMenu={true}
-          />
-        ) : (
-          <></>
-        ),
-        (userType === "Legal Adviser" || userType === "Procurement") &&
-        params.row.status === "Rejected" ? (
-          <GridActionsCellItem
-            onClick={() => {
-              handleEditForm(params.id);
-            }}
-            icon={<Edit />}
-            label="Edit Form"
-            showInMenu={true}
-          />
-        ) : (
-          <></>
-        ),
+          },
+          showInMenu: true,
+        } as any,
+        ...(userType === "FMOJ system authorizer" &&
+        (params.row.status === "PENDING" || params.row.status === "Rejected")
+          ? [
+              {
+                icon: <CheckCircleIcon color="success" />,
+                label: "Approve contract document",
+                onClick: () => {
+                  handleModal(params.id, "Approved");
+                },
+                showInMenu: true,
+                sx: { color: "green" },
+              } as any,
+            ]
+          : []),
+        ...(userType === "FMOJ system authorizer" &&
+        params.row.status === "PENDING"
+          ? [
+              {
+                icon: <CancelIcon color="error" />,
+                label: "Reject contract document",
+                onClick: () => {
+                  handleModal(params.id, "Rejected");
+                },
+                showInMenu: true,
+                sx: { color: "red" },
+              } as any,
+            ]
+          : []),
+        ...(userType === "FMOJ system authorizer"
+          ? [
+              {
+                icon: <PersonAddIcon />,
+                label: "Assign Reviewer",
+                onClick: () => {
+                  handleAssign(params.id, params.row.title);
+                },
+                showInMenu: true,
+              } as any,
+            ]
+          : []),
+        ...((userType === "Legal Adviser" || userType === "Procurement") &&
+        params.row.status === "Rejected"
+          ? [
+              {
+                icon: <Edit />,
+                label: "Edit Form",
+                onClick: () => {
+                  handleEditForm(params.id);
+                },
+                showInMenu: true,
+              } as any,
+            ]
+          : []),
       ],
     },
     { field: "contract_id", headerName: "CONTRACT ID", width: 150 },
-    // { field: "id", headerName: "ID", width: 100 },
     { field: "title", headerName: "TITLE", width: 230 },
     { field: "mda", headerName: "MDA", width: 200 },
     { field: "bpp", headerName: "TYPOLOGY 1", width: 150 },
@@ -258,7 +255,6 @@ const ContractsTable: FC = () => {
 
   return (
     <div className="mt-8 mb-20">
-      {/* <Toaster position="top-right" reverseOrder={false} /> */}
       <div
         className="h-auto"
         style={{
@@ -272,7 +268,6 @@ const ContractsTable: FC = () => {
           pageSize={pageSize}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           rowsPerPageOptions={[5, 10, 20, 50, 100]}
-          // checkboxSelection
           autoHeight
           pagination
           rows={contracts}
